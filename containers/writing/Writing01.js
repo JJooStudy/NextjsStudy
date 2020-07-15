@@ -4,6 +4,7 @@ import Container from 'components/Container';
 import ButtonDiv from 'components/Button/ButtonDiv';
 import Inputs from 'components/Input/Inputs';
 import * as Button from 'components/Button/Buttons'
+// import db from 'common/db';
 
 const animal =[
     {
@@ -62,6 +63,10 @@ class Writing01 extends Component {
         selected2: 0,
         selected3: 0,
     }
+
+    // addData () = {
+    //     db.push({...});
+    // }
     handleSelect = (selected) => {
         this.setState({selected})
     }
@@ -84,7 +89,7 @@ class Writing01 extends Component {
                 
                 <Inputs title="분양 소개 및 설명 *" label="분양에 대한 설명을 작성해 주세요" />
 
-                <ButtonDiv handleSelect={this.handleSelect3} selected={selected3} title="분양글 게시기간" data={date} />
+                <ButtonDiv handleSelect={this.handleSelect3} multiple={true} selected={selected3} title="분양글 게시기간" data={date} />
                 
 
                 <Inputs title="분양위치 지정 *" label="분양하실 위치를 지정하세요" />

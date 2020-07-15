@@ -8,18 +8,22 @@ import * as Button from './Buttons';
 // class ButtonDiv extends Component {
 //     render(){
 //         const { title, subTitle, data , handleSelect, selected, multiple } = this.props
-//         const active = multiple
-//                 ? selected.includes(item.id)
-//                 : selected === item.id
+//         // var multiList = [
+//         //     
+//         // ]
+//         // console.log(this.props.data)
+//         // const active = multiple
+//         //         ? selected.includes(item.id)
+//         //         : selected === item.id
 //         return(
 //             <>
 //                 <Title>{title}<span>{subTitle}</span></Title>
 //                 <ButtonWrap>
 //                     {
 //                         data.map((item, idx) => {
-//                             console.log(selected)
+//                             // console.log(multiple)
 //                             return (
-//                                 <Button onClick={() => handleSelect(item.id)} active={active} key={idx}>{item.name}</Button>
+//                                 <Button.Button onClick={() => handleSelect(item.id)} active={selected === item.id} key={idx}>{item.name}</Button.Button>
 //                             )
 //                         })
 //                     }
