@@ -1,0 +1,92 @@
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Title from '../Title';
+import * as Button from './Buttons';
+
+
+
+// class ButtonDiv extends Component {
+//     render(){
+//         const { title, subTitle, data , handleSelect, selected, multiple } = this.props
+//         const active = multiple
+//                 ? selected.includes(item.id)
+//                 : selected === item.id
+//         return(
+//             <>
+//                 <Title>{title}<span>{subTitle}</span></Title>
+//                 <ButtonWrap>
+//                     {
+//                         data.map((item, idx) => {
+//                             console.log(selected)
+//                             return (
+//                                 <Button onClick={() => handleSelect(item.id)} active={active} key={idx}>{item.name}</Button>
+//                             )
+//                         })
+//                     }
+//                 </ButtonWrap>
+//             </>
+//         )
+//     }
+// }
+
+//Writing01.js에서 props를 받아야서 처리할때
+class ButtonDiv extends Component {
+    render(){
+        const { title, subTitle, data , handleSelect, selected } = this.props
+        return(
+            <>
+                {title && <Title>{title}<span>{subTitle}</span></Title>}
+                <ButtonWrap>
+                    {
+                        data.map((item, idx) => {
+                            console.log(selected)
+                            return (
+                                <Button.Button onClick={() => handleSelect(item.id)} active={selected === item.id} key={idx}>{item.name}</Button.Button>
+                            )
+                        })
+                    }
+                </ButtonWrap>
+            </>
+        )
+    }
+}
+
+
+// buttonDiv.js 안에서 state props 처리할때
+// class ButtonDiv extends Component {
+//     state = {
+//         selected: 0,
+//     }
+//     render(){
+//         const { selected } = this.state
+//         const { title, data } = this.props
+//         return(
+//             <>
+//                 <h3>{title}</h3>
+//                 <ButtonWrap>
+//                 {
+//                     data.map((item, idx) => {
+//                         console.log('active:', selected === item.id,'selected:',selected )
+//                         return (
+//                             <button onClick={() => this.setState({selected: item.id})} active={selected === item.id} key={idx}>{item.name}</button>
+//                         )
+//                     })
+//                 }
+//                 </ButtonWrap>
+//             </>
+//         )
+//     }
+// }
+
+export default ButtonDiv;
+
+const ButtonWrap =styled.div`
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    width:calc(100% + 20px);
+    margin:10px 0;
+    margin-left:-10px;
+    box-sizing:border-box;
+    padding:0 10px;
+`

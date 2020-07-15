@@ -1,0 +1,27 @@
+{
+  "name": "tirrilee-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_PATH=. next dev",
+    "build": "cross-env NODE_PATH=. next build",
+    "start": "cross-env NODE_PATH=. next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.8.0",
+    "next": "9.1.4",
+    "react": "16.12.0",
+    "react-adsense": "^0.1.0",
+    "react-dom": "16.12.0",
+    "react-ga": "^2.7.0",
+    "react-select": "3.0.8",
+    "react-slick": "0.25.2",
+    "styled-components": "4.4.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-proposal-decorators": "7.6.0",
+    "babel-plugin-styled-components": "1.10.6",
+    "cross-env": "6.0.3"
+  }
+}
