@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Title from '../Title';
+import Title from 'components/Title';
 import * as Button from './Buttons';
 
 
@@ -28,6 +28,7 @@ import * as Button from './Buttons';
 //         )
 //     }
 // }
+
 
 //Writing01.js에서 props를 받아야서 처리할때
 class ButtonDiv extends Component {
@@ -90,3 +91,18 @@ const ButtonWrap =styled.div`
     box-sizing:border-box;
     padding:0 10px;
 `
+
+
+
+// 1. data = [] 일 떄, id 1을 선택하면
+// - data = [1]
+// - button 에서 1이 active 되어야함 -> data.includes(1) --> true, false
+
+// 2. data = [1] 일 떄, id 2을 선택하면
+// - data = [1, 2]
+// - button 에서 1, 2가 active 되어야함 -> data.includes(1) --> true, false
+// data.includes(1)
+// data.includes(2)
+
+// 2. data = [1, 2] 일 떄, id 2을 선택하면
+// - data = [1]

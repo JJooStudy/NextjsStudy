@@ -47,6 +47,7 @@ export const ButtonAdd = styled.button`
     width:calc(100% - 30px);
     margin:20px auto;
     padding:10px 0;
+    border-radius:5px;
     :hover, :focus, :active{
         background-color:#f1f1f1;
     }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Container from 'components/Container';
+import Title from 'components/Title';
 import ButtonDiv from 'components/Button/ButtonDiv';
 import * as Button from 'components/Button/Buttons';
 import Inputs from 'components/Input/Inputs';
 import SaveDeleteDiv from 'components/Button/SaveDeleteDiv';
+import PhotoBox from 'components/Photo/PhotoBox';
 
 const gender = [
     {
@@ -28,6 +30,7 @@ class Writing02 extends Component {
         return(
             <>
                 <Container>
+                    <PhotoBox/>
                     <ButtonDiv handleSelect={this.handleSelect} selected={selected} data={gender} />
                     <Inputs label="아이에 대한 설명을 작성해 주세요" />
                     <Inputs label="분양 금액을 입력해 주세요" />
