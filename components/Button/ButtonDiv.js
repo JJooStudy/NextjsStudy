@@ -5,23 +5,64 @@ import * as Button from './Buttons';
 
 
 
+class ButtonDiv extends Component {
+    render(){
+        const { title, subTitle, data , handleSelect, selected, multiple } = this.props
+
+        // const dataList = []
+        // for(const d of data){
+        //     dataList.push(d.name)
+        // }
+        // console.log('multiple:',dataList)
+
+        return(
+            <>
+                <Title>{title}<span>{subTitle}</span></Title>
+                <ButtonWrap>
+                    {
+                        data.map((item, idx) => {
+                            // console.log('multiple:',multiple)
+                            const active = multiple
+                                ? selected === item.id //7 === '7' //study
+                                : selected === item.id
+                                // ? selected.includes(item.id)
+                            return (
+                                <Button.Button onClick={() => handleSelect(item.id)} active={active} key={idx}>{item.name}</Button.Button>
+                            )
+                        })
+                    }
+                </ButtonWrap>
+            </>
+        )
+    }
+}
+
+
+// 1. data = [] 일 떄, id 1을 선택하면
+// - data = [1]
+// - button 에서 1이 active 되어야함 -> data.includes(1) --> true, false
+
+// 2. data = [1] 일 떄, id 2을 선택하면
+// - data = [1, 2]
+// - button 에서 1, 2가 active 되어야함 -> data.includes(1) --> true, false
+// data.includes(1)
+// data.includes(2)
+
+// 2. data = [1, 2] 일 떄, id 2을 선택하면
+// - data = [1]
+
+
+//Writing01.js에서 props를 받아야서 처리할때
 // class ButtonDiv extends Component {
 //     render(){
-//         const { title, subTitle, data , handleSelect, selected, multiple } = this.props
-//         // var multiList = [
-//         //     
-//         // ]
-//         // console.log(this.props.data)
-//         // const active = multiple
-//         //         ? selected.includes(item.id)
-//         //         : selected === item.id
+//         const { title, subTitle, data , handleSelect, selected } = this.props
 //         return(
 //             <>
-//                 <Title>{title}<span>{subTitle}</span></Title>
+//                 {title && <Title>{title}<span>{subTitle}</span></Title>}
 //                 <ButtonWrap>
 //                     {
 //                         data.map((item, idx) => {
-//                             // console.log(multiple)
+//                             console.log('button:',selected)
 //                             return (
 //                                 <Button.Button onClick={() => handleSelect(item.id)} active={selected === item.id} key={idx}>{item.name}</Button.Button>
 //                             )
@@ -32,29 +73,6 @@ import * as Button from './Buttons';
 //         )
 //     }
 // }
-
-
-//Writing01.js에서 props를 받아야서 처리할때
-class ButtonDiv extends Component {
-    render(){
-        const { title, subTitle, data , handleSelect, selected } = this.props
-        return(
-            <>
-                {title && <Title>{title}<span>{subTitle}</span></Title>}
-                <ButtonWrap>
-                    {
-                        data.map((item, idx) => {
-                            console.log(selected)
-                            return (
-                                <Button.Button onClick={() => handleSelect(item.id)} active={selected === item.id} key={idx}>{item.name}</Button.Button>
-                            )
-                        })
-                    }
-                </ButtonWrap>
-            </>
-        )
-    }
-}
 
 
 // buttonDiv.js 안에서 state props 처리할때
@@ -98,15 +116,3 @@ const ButtonWrap =styled.div`
 
 
 
-// 1. data = [] 일 떄, id 1을 선택하면
-// - data = [1]
-// - button 에서 1이 active 되어야함 -> data.includes(1) --> true, false
-
-// 2. data = [1] 일 떄, id 2을 선택하면
-// - data = [1, 2]
-// - button 에서 1, 2가 active 되어야함 -> data.includes(1) --> true, false
-// data.includes(1)
-// data.includes(2)
-
-// 2. data = [1, 2] 일 떄, id 2을 선택하면
-// - data = [1]
