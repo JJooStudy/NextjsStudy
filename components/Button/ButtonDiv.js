@@ -8,13 +8,6 @@ import * as Button from './Buttons';
 class ButtonDiv extends Component {
     render(){
         const { title, subTitle, data , handleSelect, selected, multiple } = this.props
-
-        // const dataList = []
-        // for(const d of data){
-        //     dataList.push(d.name)
-        // }
-        // console.log('multiple:',dataList)
-
         return(
             <>
                 <Title>{title}<span>{subTitle}</span></Title>
@@ -26,7 +19,6 @@ class ButtonDiv extends Component {
                             const active = multiple
                                 ? selected.includes(item.id)
                                 : selected === item.id
-                                // ? selected.includes(item.id)
                             return (
                                 <Button.Button onClick={() => handleSelect(item.id)} multiple={multiple} active={active} key={idx}>{item.name}</Button.Button>
                             )

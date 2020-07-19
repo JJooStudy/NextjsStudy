@@ -114,11 +114,7 @@ class Writing01 extends Component {
     
     render(){
         const { selected, selected2, selected3 } = this.state
-        // console.log('writing :',selected2)
-        // let list = [];
-        // list.push(selected2)
-    
-        // console.log(list)
+
         return(
             <Container>
                 <ButtonDiv handleSelect={this.handleSelect} multiple={false} selected={selected} title="동물종류 *" data={animal}  />
