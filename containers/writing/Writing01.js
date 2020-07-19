@@ -82,18 +82,27 @@ class Writing01 extends Component {
         this.setState({selected})
     }
     handleSelect2 = (selected2) => {
-        console.log('1111',selected2)
+        // console.log('첫번째',selected2)
         // 선택된 element를 가져와서 기존 리스트에 있는지 확인해서
         // if 없으면 넣고
         // if 있으면 빼고
 
         const currentData = this.state.selected2
-        console.log('state',currentData)
+        // console.log('state',currentData)
         // []. [1]
-        currentData.push(selected2)
+        if(currentData.includes(selected2)){
+            // console.log('pop');
+            currentData.pop(selected2)
+        }else{
+            // console.log('push');
+            currentData.push(selected2)
+            currentData.sort()
+        }
+        
         // [1]. [2]
         this.setState({selected2: currentData})
-        console.log('22222',selected2)
+        // console.log('currentData에 push후',currentData)
+        
     }
     handleSelect3 = (selected3) => {
         this.setState({selected3})
@@ -105,23 +114,23 @@ class Writing01 extends Component {
     
     render(){
         const { selected, selected2, selected3 } = this.state
-        console.log('writing :',selected2)
-        let list = [];
-        list.push(selected2)
+        // console.log('writing :',selected2)
+        // let list = [];
+        // list.push(selected2)
     
-        console.log(list)
+        // console.log(list)
         return(
             <Container>
-                <ButtonDiv handleSelect={this.handleSelect} selected={selected} title="동물종류 *" data={animal}  />
+                <ButtonDiv handleSelect={this.handleSelect} multiple={false} selected={selected} title="동물종류 *" data={animal}  />
 
                 <Inputs label="품종을 입력해 주세요" />
                 <Inputs label="생후 개월 수를 입력해 주세요" />
 
-                <ButtonDiv handleSelect={this.handleSelect2} selected={selected2} title="접종 및 기타사항" subTitle="복수선택 가능" data={vaccinationEtc} />
+                <ButtonDiv handleSelect={this.handleSelect2} multiple={true} selected={selected2} title="접종 및 기타사항" subTitle="복수선택 가능" data={vaccinationEtc} />
                 
                 <Inputs title="분양 소개 및 설명 *" label="분양에 대한 설명을 작성해 주세요" />
 
-                <ButtonDiv handleSelect={this.handleSelect3} multiple={true} selected={selected3} title="분양글 게시기간" data={date} />
+                <ButtonDiv handleSelect={this.handleSelect3} multiple={false} selected={selected3} title="분양글 게시기간" data={date} />
                 
 
                 <Inputs title="분양위치 지정 *" label="분양하실 위치를 지정하세요" />

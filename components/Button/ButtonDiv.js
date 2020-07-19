@@ -21,13 +21,14 @@ class ButtonDiv extends Component {
                 <ButtonWrap>
                     {
                         data.map((item, idx) => {
-                            // console.log('multiple:',multiple)
+                            console.log('selected:',selected)
+                            console.log('multiple:',multiple)
                             const active = multiple
-                                ? selected === item.id //7 === '7' //study
+                                ? selected.includes(item.id)
                                 : selected === item.id
                                 // ? selected.includes(item.id)
                             return (
-                                <Button.Button onClick={() => handleSelect(item.id)} active={active} key={idx}>{item.name}</Button.Button>
+                                <Button.Button onClick={() => handleSelect(item.id)} multiple={multiple} active={active} key={idx}>{item.name}</Button.Button>
                             )
                         })
                     }
