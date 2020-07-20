@@ -1,6 +1,12 @@
-import React from 'react'
-import Head from 'next/head'
-import Writing01 from 'containers/writing/Writing01';
+import React from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import Step1 from 'containers/Step1';
+import Step2 from 'containers/Step2';
+// import Nav from 'component/nav/Nav';
+// import Writing01 from 'containers/writing/Writing01';
+
 
 // components
 // import Nav from 'components/nav'
@@ -16,6 +22,20 @@ import Writing01 from 'containers/writing/Writing01';
 const OG_IMGAE = "/static/images/OG_IMGAE.png"
 
 class Home extends React.Component {
+  state = {
+    step : null
+  }
+  componentDidMount(){
+    this.setState({
+      step : 0
+    })
+  }
+  handleNextStep = (step) => {
+    this.setState({
+      step : step
+    })
+    console.log(step);
+  }
   render() {
     return ( 
       <div>
@@ -31,7 +51,18 @@ class Home extends React.Component {
           <link rel="canonical" href="/" />
         </Head>
         <h2>분양 글등록</h2>
-        <Writing01 />
+        {/* <Step1 handleNextStep={this.handleNextStep} /> */}
+        {
+          this.state.step === 0 &&  ( <Step1 handleNextStep={this.handleNextStep} /> )
+        }
+        {
+          this.state.step === 1 &&  ( <Step2 /> )
+        }
+        {/* {
+          this.state.step == 'step1' ? null : null
+        } */}
+        {/* <Nav /> */}
+        {/* <Writing01 /> */}
         {/* <Nav fixed/>
         <Banner/>
         <Info/>

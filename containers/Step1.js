@@ -83,6 +83,7 @@ class Writing01 extends Component {
         if(currentData.includes(selected2)){
             // console.log('pop');
             currentData.pop(selected2)
+            //pop 말고 selected2가 몇번째 index인지 구해서 그걸 remove / 
         }else{
             // console.log('push');
             currentData.push(selected2)
@@ -104,7 +105,7 @@ class Writing01 extends Component {
     
     render(){
         const { selected, selected2, selected3 } = this.state
-
+        const { handleNextStep } = this.props
         return(
             <Container>
                 <ButtonDiv handleSelect={this.handleSelect} multiple={false} selected={selected} title="동물종류 *" data={animal}  />
@@ -121,11 +122,9 @@ class Writing01 extends Component {
 
                 <Inputs title="분양위치 지정 *" label="분양하실 위치를 지정하세요" />
                 
-                <Link href="step2">
-                    <Button.ButtonStep>
-                        다음단계(아이정보입력)
-                    </Button.ButtonStep>
-                </Link>
+                <Button.ButtonStep onClick={() => handleNextStep(1)}>
+                    다음단계(아이정보입력)
+                </Button.ButtonStep>
             </Container>
         )
     }
