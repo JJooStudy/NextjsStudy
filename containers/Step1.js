@@ -3,60 +3,9 @@ import Link from 'next/link';
 import Container from 'components/Container';
 import ButtonDiv from 'components/Button/ButtonDiv';
 import Inputs from 'components/Input/Inputs';
-import * as Button from 'components/Button/Buttons'
-// import { animal } from '../db.js'
+import * as Button from 'components/Button/Buttons';
+import { animal, vaccinationEtc, date } from 'common/db.js';
 // import db from 'common/db';
-
-const animal =[
-    {
-        id:1,
-        name : '강아지'
-    },
-    {
-        id:2,
-        name : '고양이'
-    },
-    {
-        id:3,
-        name : '기타동물'
-    }
-]
-const vaccinationEtc = [
-    {
-        id:1,
-        name : '종합접종'
-    },
-    {
-        id:2,
-        name : '광견병접종'
-    },
-    {
-        id:3,
-        name : '장염접종'
-    },
-    {
-        id:4,
-        name : '완구충'
-    },
-    {
-        id:5,
-        name : '부모확인'
-    },
-    {
-        id:6,
-        name : '용품증정'
-    }
-]
-const date = [
-    {
-        id:1,
-        name : '10일간 게시'
-    },
-    {
-        id:2,
-        name : '20일간 게시'
-    }
-]
 
 class Writing01 extends Component {
     state = {

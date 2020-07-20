@@ -14,8 +14,8 @@ class ButtonDiv extends Component {
                 <ButtonWrap>
                     {
                         data.map((item, idx) => {
-                            // console.log('selected:',selected)
-                            // console.log('multiple:',multiple)
+                            console.log('selected:',selected)
+                            console.log('multiple:',multiple)
                             const active = multiple
                                 ? selected.includes(item.id)
                                 : selected === item.id

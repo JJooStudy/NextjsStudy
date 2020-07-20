@@ -6,17 +6,11 @@ import * as Button from 'components/Button/Buttons';
 import Inputs from 'components/Input/Inputs';
 import SaveDeleteDiv from 'components/Button/SaveDeleteDiv';
 import PhotoBox from 'components/Photo/PhotoBox';
+import { gender } from 'common/db.js'
 
-const gender = [
-    {
-        id:1,
-        name : '남아'
-    },
-    {
-        id:2,
-        name : '여아'
-    }
-]
+//구조 이미지부터 추가하기 버튼까지가 한 블럭
+//추가하기 버튼 누를 시 그 블럭이 하나 추가 
+//컴포넌트 정리 필요 
 
 class Writing02 extends Component {
     state = {
