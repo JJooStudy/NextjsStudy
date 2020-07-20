@@ -13,36 +13,20 @@ class Writing01 extends Component {
         selected2: [],
         selected3: 0,
     }
-
-    // addData () = {
-    //     db.push({...});
-    // }
+    
     handleSelect = (selected) => {
         this.setState({selected})
     }
     handleSelect2 = (selected2) => {
-        // console.log('첫번째',selected2)
-        // 선택된 element를 가져와서 기존 리스트에 있는지 확인해서
-        // if 없으면 넣고
-        // if 있으면 빼고
-
         const currentData = this.state.selected2
-        // console.log('state',currentData)
-        // []. [1]
         if(currentData.includes(selected2)){
-            // console.log('pop');
             currentData.pop(selected2)
             //pop 말고 selected2가 몇번째 index인지 구해서 그걸 remove / 
         }else{
-            // console.log('push');
             currentData.push(selected2)
             currentData.sort()
         }
-        
-        // [1]. [2]
         this.setState({selected2: currentData})
-        // console.log('currentData에 push후',currentData)
-        
     }
     handleSelect3 = (selected3) => {
         this.setState({selected3})
