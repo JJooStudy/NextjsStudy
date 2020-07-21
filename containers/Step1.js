@@ -7,7 +7,7 @@ import * as Button from 'components/Button/Buttons';
 import { animal, vaccinationEtc, date } from 'common/db.js';
 // import db from 'common/db';
 
-class Writing01 extends Component {
+class Step1 extends Component {
     state = {
         selected: 0,
         selected2: [],
@@ -67,4 +67,4 @@ class Writing01 extends Component {
     }
 }
 
-export default Writing01;
+export default Step1;

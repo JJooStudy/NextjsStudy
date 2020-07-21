@@ -34,7 +34,7 @@ class Home extends React.Component {
     this.setState({
       step : step
     })
-    console.log(step);
+    // console.log(step);
   }
   render() {
     return ( 
