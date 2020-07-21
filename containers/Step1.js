@@ -20,13 +20,17 @@ class Writing01 extends Component {
     handleSelect2 = (selected2) => {
         const currentData = this.state.selected2
         if(currentData.includes(selected2)){
-            currentData.pop(selected2)
+            const indexValue = currentData.indexOf(selected2)
+            console.log(indexValue)
+            currentData.splice(indexValue, 1)
+            // currentData.pop(selected2)
+            
             //pop 말고 selected2가 몇번째 index인지 구해서 그걸 remove / 
         }else{
             currentData.push(selected2)
-            currentData.sort()
         }
         this.setState({selected2: currentData})
+        console.log(currentData)
     }
     handleSelect3 = (selected3) => {
         this.setState({selected3})
