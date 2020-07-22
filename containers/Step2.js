@@ -12,12 +12,14 @@ class Step2 extends Component {
     state = {
         // selected: 0,
         petItem : [
-            {id:0, gender: 0}
+            {id:0, gender: 1}
         ]
     }
-    handleSelect = (selected) => {
-        this.setState({selected})
+    handleSelect = () => {
+        const genderSelect = Object.assign([], this.state.petItem)
+        // this.setState({selected})
         // console.log(selected)
+        
     }
     addPetItem = () => {
         const copyPetItem = Object.assign([], this.state.petItem);
@@ -26,7 +28,7 @@ class Step2 extends Component {
             copyPetItem.push({id:0})
             this.setState({petItem:copyPetItem})
         }else{
-            copyPetItem.push({id:copyPetItem.length})
+            copyPetItem.push({id:copyPetItem.length,  gender: 1})
             this.setState({petItem:copyPetItem})
         }
     }

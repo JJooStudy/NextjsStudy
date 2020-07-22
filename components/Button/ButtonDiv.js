@@ -7,7 +7,7 @@ import * as Button from './Buttons';
 
 class ButtonDiv extends Component {
     render(){
-        const { title, subTitle, data , handleSelect, selected, multiple } = this.props
+        const { title, subTitle, data , handleSelect, selected, multiple, pet } = this.props
         return(
             <>
                 <Title>{title}<span>{subTitle}</span></Title>
@@ -15,7 +15,7 @@ class ButtonDiv extends Component {
                     {
                         data.map((item, idx) => {
                             // console.log('selected:',selected)
-                            // console.log('multiple:',multiple)
+                            console.log('pet:',pet)
                             const active = multiple
                                 ? selected.includes(item.id)
                                 : selected === item.id
@@ -29,6 +29,32 @@ class ButtonDiv extends Component {
         )
     }
 }
+
+
+// class ButtonDiv extends Component {
+//     render(){
+//         const { title, subTitle, data , handleSelect, selected, multiple } = this.props
+//         return(
+//             <>
+//                 <Title>{title}<span>{subTitle}</span></Title>
+//                 <ButtonWrap>
+//                     {
+//                         data.map((item, idx) => {
+//                             // console.log('selected:',selected)
+//                             // console.log('multiple:',multiple)
+//                             const active = multiple
+//                                 ? selected.includes(item.id)
+//                                 : selected === item.id
+//                             return (
+//                                 <Button.Button onClick={() => handleSelect(item.id)} multiple={multiple} active={active} key={idx}>{item.name}</Button.Button>
+//                             )
+//                         })
+//                     }
+//                 </ButtonWrap>
+//             </>
+//         )
+//     }
+// }
 
 
 // 1. data = [] 일 떄, id 1을 선택하면

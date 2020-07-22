@@ -16,7 +16,8 @@ class PetItem extends Component {
     }
     render(){
         const { handleSelect, selected, pet } = this.props
-        console.log("selected : ",selected)
+        // console.log("selected : ",selected)
+        // console.log("pet : ",pet)
         const setting = {
             dots: false,
             infinite:false,
@@ -34,7 +35,7 @@ class PetItem extends Component {
                     }}
                 >
                     <PhotoBox />
-                    <ButtonDiv handleSelect={handleSelect} selected={selected} data={gender} />
+                    <ButtonDiv handleSelect={handleSelect} pet={pet} selected={selected} data={gender} />
                     <Inputs label="아이에 대한 설명을 작성해 주세요" />
                     <Inputs label="분양 금액을 입력해 주세요" />
                     <SaveDeleteDiv />
