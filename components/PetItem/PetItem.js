@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import Title from 'components/Title';
-import ButtonDiv from 'components/Button/ButtonDiv';
+import GenderButton from 'components/Button/GenderButton';
 import PhotoBox from 'components/PetItem/PhotoBox';
 import Inputs from 'components/Input/Inputs';
 import SaveDeleteDiv from 'components/Button/SaveDeleteDiv';
@@ -35,7 +35,7 @@ class PetItem extends Component {
                     }}
                 >
                     <PhotoBox />
-                    <ButtonDiv handleSelect={handleSelect} pet={pet} selected={selected} data={gender} />
+                    <GenderButton handleSelect={handleSelect} pet={pet} selected={selected} data={gender} />
                     <Inputs label="아이에 대한 설명을 작성해 주세요" />
                     <Inputs label="분양 금액을 입력해 주세요" />
                     <SaveDeleteDiv />

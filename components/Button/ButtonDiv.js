@@ -15,7 +15,7 @@ class ButtonDiv extends Component {
                     {
                         data.map((item, idx) => {
                             // console.log('selected:',selected)
-                            console.log('pet:',pet)
+                            // console.log('pet:',pet)
                             const active = multiple
                                 ? selected.includes(item.id)
                                 : selected === item.id

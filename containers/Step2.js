@@ -15,10 +15,33 @@ class Step2 extends Component {
             {id:0, gender: 1}
         ]
     }
-    handleSelect = () => {
-        const genderSelect = Object.assign([], this.state.petItem)
-        // this.setState({selected})
-        // console.log(selected)
+    handleSelect = (gender, selectpetID) => {
+        // const { petItem } = this.state
+        // this.state = { petItem : [{id:0, gender: 1}] }
+        // const genderSelect = Object.assign([], this.state.petItem)
+        // const genderSelect = [...this.state.petItem]
+        // const petItemID = genderSelect.length -1
+
+        // genderSelect.push({gender:gender})
+        // this.setState({gender:gender})
+        
+        console.log('selectpetID : ', selectpetID)//누른 버튼의 petItem id 값
+        console.log('gender : ', gender)//누른버튼의 성별
+        // console.log('genderSelect : ', genderSelect)
+        // console.log('genderSelect.length : ', genderSelect.length)
+
+        // genderSelect.splice(2, 1, gender)
+        const list = this.state.petItem
+        for(var item of list) {
+            if(item.id === selectpetID) {
+                item.gender = gender
+            }
+            console.log(item);
+        }
+        console.log(list)
+        this.setState({
+            petItem : list
+        })
         
     }
     addPetItem = () => {
