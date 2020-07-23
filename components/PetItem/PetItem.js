@@ -16,8 +16,6 @@ class PetItem extends Component {
     }
     render(){
         const { handleSelect, selected, pet } = this.props
-        // console.log("selected : ",selected)
-        // console.log("pet : ",pet)
         const setting = {
             dots: false,
             infinite:false,

@@ -23,9 +23,7 @@ class Step1 extends Component {
             const indexValue = currentData.indexOf(selected2)
             console.log(indexValue)
             currentData.splice(indexValue, 1)
-            // currentData.pop(selected2)
-            
-            //pop 말고 selected2가 몇번째 index인지 구해서 그걸 remove / 
+            // currentData.pop() --> 제일 마지막에 있는 것 부터 삭제 
         }else{
             currentData.push(selected2)
         }
@@ -46,19 +44,12 @@ class Step1 extends Component {
         return(
             <Container>
                 <ButtonDiv handleSelect={this.handleSelect} multiple={false} selected={selected} title="동물종류 *" data={animal}  />
-
                 <Inputs label="품종을 입력해 주세요" />
                 <Inputs label="생후 개월 수를 입력해 주세요" />
-
                 <ButtonDiv handleSelect={this.handleSelect2} multiple={true} selected={selected2} title="접종 및 기타사항" subTitle="복수선택 가능" data={vaccinationEtc} />
-                
                 <Inputs title="분양 소개 및 설명 *" label="분양에 대한 설명을 작성해 주세요" />
-
                 <ButtonDiv handleSelect={this.handleSelect3} multiple={false} selected={selected3} title="분양글 게시기간" data={date} />
-                
-
                 <Inputs title="분양위치 지정 *" label="분양하실 위치를 지정하세요" />
-                
                 <Button.ButtonStep onClick={() => handleNextStep(1)}>
                     다음단계(아이정보입력)
                 </Button.ButtonStep>
